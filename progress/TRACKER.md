@@ -1,10 +1,12 @@
 # Progress Tracker | لوحة التقدم
 
-> آخر تحديث: 2026-10-21
+> آخر تحديث: 2026-10-22
 
 ## الآن
 - **المرحلة الحالية:** Phase 0 (Foundations)
-- **الجلسة الجاية:** Session 01. Lab 00: Modbus without authentication + Security+ 1.2 (CIA في OT)
+- **المهمة الحالية:** Mission 01: بناء شبكة المحطة (IT / firewall / OT) 🟨
+- **أسلوب التعلم:** مهمات تركيب عملية (راجع PROFILE.md)
+- **XP:** 0 · **الرتبة:** Field Engineer
 - **قرار معلّق:** نسخة امتحان Security+ (701 أو 801). نقرر بعد Phase 1.
 
 ## المراحل
@@ -30,15 +32,19 @@
 ## Labs
 | Lab | الموضوع | الحالة | Write-up |
 |---|---|---|---|
-| 00 | Modbus without authentication | ⬜ | [labs/00-modbus-no-auth](../labs/00-modbus-no-auth/) |
+| 00 | Modbus without authentication | ⬜ (جاهز، يشتغل على Debian RTU) | [labs/00-modbus-no-auth](../labs/00-modbus-no-auth/) |
+| 01 | Substation network: IT / firewall / OT | 🟨 الشبكات جاهزة | [labs/01-substation-network](../labs/01-substation-network/) |
 
 ## اللاب على اللابتوب (VMs)
 | المكون | الحالة |
 |---|---|
-| Hypervisor (VirtualBox / VMware Workstation) | ⬜ |
-| Kali / Ubuntu attacker VM | ⬜ |
-| Firewall VM (pfSense / FortiGate) | ⬜ |
-| Windows Server (AD) | ⬜ |
+| Hypervisor: VMware Workstation Pro 17 | ✅ |
+| VMnet2 (IT) + VMnet3 (OT) | ✅ |
+| Kali VM (موجود من قبل) | ✅ |
+| Debian RTU VM | ⬜ |
+| Windows 10 x64 كجهاز IT | ⬜ |
+| Firewall VM: OPNsense 26.7 | ⬜ |
+| Windows Server (AD): WS2019_DC1/DC2 موجودة | 🟨 |
 | Wazuh / Security Onion | ⬜ |
 | IED simulators | ⬜ |
 

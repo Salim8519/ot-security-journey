@@ -79,3 +79,18 @@ A) Local accounts on each device  B) RADIUS/TACACS+ backed by AD  C) SNMPv1  D) 
 
 RSTP يعيد بناء المسار بعد العطل (convergence بعشرات/مئات الـ ms). PRP يرسل كل frame على شبكتين مستقلتين بنفس الوقت، فالعطل ما يسبب أي فقد (zero recovery time). هذا مثال على resilience في Security+ 3.4.
 </details>
+
+### Q011 · [3.1] · [✔0 / ✘0]
+تبغى VM تطلع للإنترنت، بس ما تبغى أي جهاز من شبكة البيت يقدر يوصلها. أي نوع شبكة في VMware؟
+A) Bridged  B) NAT  C) Host-only  D) Custom بدون كرت
+<details><summary>الجواب</summary>
+
+**B) NAT.** الـ VM تطلع باسم جهازك، ومن برا ما يشوفونها. Bridged تخليها مكشوفة للكل، وHost-only ما فيها إنترنت أصلاً.
+</details>
+
+### Q012 · [2.5] · [✔0 / ✘0]
+لابتوب مهندس مربوط بكابل على شبكة المحطة، وبنفس الوقت على WiFi الشركة. وش اسم هالمشكلة، وليش خطيرة؟
+<details><summary>الجواب</summary>
+
+**Dual-homed host.** اللابتوب يصير جسر بين الشبكتين ويتخطى الـ firewall. لو انخترق من جهة الـ IT، المهاجم يوصل للمحطة مباشرة. عشان كذا شلنا الـ host adapter من VMnet3.
+</details>
