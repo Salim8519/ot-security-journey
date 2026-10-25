@@ -94,3 +94,24 @@ A) Bridged  B) NAT  C) Host-only  D) Custom بدون كرت
 
 **Dual-homed host.** اللابتوب يصير جسر بين الشبكتين ويتخطى الـ firewall. لو انخترق من جهة الـ IT، المهاجم يوصل للمحطة مباشرة. عشان كذا شلنا الـ host adapter من VMnet3.
 </details>
+
+### Q013 · [3.2] · [✔0 / ✘0]
+ركبت firewall جديد بين IT وOT، وما كتبت ولا قاعدة على interface الـ OT. جهاز في الـ OT يحاول يوصل للإنترنت. وش يصير وليش؟
+<details><summary>الجواب</summary>
+
+**ينرفض.** الـ firewall يشتغل بمبدأ **default deny (implicit deny)**: أي ترافيك ما له قاعدة تسمح فيه صراحة ينرفض. شفناها في اللاب لما Debian طلع "Bad archive mirror".
+</details>
+
+### Q014 · [5.5 / 4.5] · [✔0 / ✘0]
+وقت الـ commissioning فتح المهندس قاعدة "allow any" مؤقتة عشان يحمّل تحديثات، وبعد سنة القاعدة لين الحين موجودة. وش اسم المشكلة؟ وكيف تمنعها؟
+<details><summary>الجواب</summary>
+
+**Rule creep / stale temporary rules.** نمنعها بإن نسمي القاعدة بوضوح (TEMP + سبب + تاريخ انتهاء)، ونسوي firewall rule review دوري، وchange management. وفي الـ Cyber SAT نتأكد إن ما بقت ولا قاعدة any/any.
+</details>
+
+### Q015 · [3.1] · [✔0 / ✘0]
+في IEC 62443، وش الفرق بين الـ **zone** والـ **conduit**؟ وطبقها على اللاب.
+<details><summary>الجواب</summary>
+
+**Zone** = مجموعة أصول لها نفس متطلبات الأمان (اللاب: IT zone وOT zone). **Conduit** = قناة الاتصال المتحكم فيها بين الـ zones (اللاب: الـ firewall OPNsense). أي اتصال بين zones لازم يمر عبر conduit معرّف.
+</details>

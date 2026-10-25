@@ -38,7 +38,8 @@
 | البند | القيمة |
 |---|---|
 | Host | لابتوب Windows (`desktop-bq6ecr7`)، x64، كرت شبكة Realtek Gaming GbE، كرت NVIDIA |
-| RAM / CPU / Disk | ❓ ما تأكدنا. الـ VM حق Win10 GPG ماخذ 8GB و4 cores، فالجهاز غالباً 16GB أو أكثر |
+| RAM | **حوالي 24GB** (VMware يقول أقصى RAM للـ VM هو 20.5GB) |
+| Antivirus | Kaspersky Total Security (نوافذه أحياناً تغطي على الشاشة) |
 | Hypervisor | **VMware Workstation Pro 17** |
 | مكان الـ VMs | `D:\Virtualizations\` |
 | ISOs | في `Downloads`: OPNsense 26.7 وDebian 13.7 netinst |
@@ -64,12 +65,20 @@
 | VMnet2 | Host-only, no DHCP | 10.10.10.0/24 | **IT zone** (Mission 01) |
 | VMnet3 | Host-only, no DHCP, **بدون host adapter** | 10.20.20.0/24 | **OT zone** (Mission 01) |
 
-**ملاحظة لـ Claude:** نافذة Virtual Network Editor تشتغل كـ admin، وWindows (UIPI) يمنع computer use من التحكم فيها. أي تعديل على الشبكات يسويه سالم بيده.
+**ملاحظات لـ Claude (حدود الأدوات على هالجهاز):**
+- Virtual Network Editor نافذة admin، وWindows UIPI يمنع computer use منها، فسالم يعدّلها بيده.
+- **VMware console ما يستقبل الأزرار من computer use.** أي كتابة داخل VM (installers وconsole menus) يسويها سالم. Claude يقدر يسوي ويعدّل الـ VMs من واجهة VMware نفسها.
+- المتصفح المدمج يطلب موافقة على **كل خطوة** في عناوين 10.x. الأسرع إن Claude يوجّه وسالم يضغط.
+- كلمات السر يكتبها سالم بنفسه دايماً.
+- `computer_open_application` لـ VMware يفتح نافذة جديدة كل مرة. لا تستدعيه إلا لو لازم.
 
 ## أسلوب التعلم المناسب
 - **يتعلم بالممارسة: يركّب ويشغّل.** ما يقرأ كتب، وما يحب التحليل العميق (يخليه للـ AI).
 - كل جلسة = مهمة فيها شي يركّبه، والفهم يجي خفيف من خلال التركيب.
 - الشرح لازم يكون بالعربي البسيط ومع أمثلة من الحياة.
+- **يبغى يعرف الصورة الكاملة:** وش صار وليش، مو بس اضغط هنا. بعد كل خطوة: وش صار وليش.
+- **الرسومات:** ASCII يخرب مع RTL، فالأحسن رسم SVG حقيقي. الكلام عربي مع مصطلحات إنجليزي.
+- الكيبورد عنده أحياناً على العربي (تطلع رسائل مثل `صاشف` = `what`).
 - يحب نظام النقاط والمهمات (XP، رتب، Boss fights).
 - جلسات قصيرة مرنة بدل جدول أسبوعي ثابت.
 - ربط كل مفهوم بشي يعرفه من المحطة.

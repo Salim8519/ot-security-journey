@@ -1,10 +1,12 @@
 # Progress Tracker | لوحة التقدم
 
-> آخر تحديث: 2026-10-22
+> آخر تحديث: 2026-10-25
 
 ## الآن
 - **المرحلة الحالية:** Phase 0 (Foundations)
-- **المهمة الحالية:** Mission 01: بناء شبكة المحطة (IT / firewall / OT) 🟨
+- **المهمة الحالية:** Mission 01: بناء شبكة المحطة (IT / firewall / OT) 🟨 حوالي 60%
+- **الخطوة الجاية:** تكميل تثبيت Debian (Software selection) ← Python + pymodbus ← تشغيل الـ RTU
+- **تذكير أمني:** ⚠️ قاعدة `TEMP` على OT لازم تنحذف بعد التثبيت
 - **أسلوب التعلم:** مهمات تركيب عملية (راجع PROFILE.md)
 - **XP:** 0 · **الرتبة:** Field Engineer
 - **قرار معلّق:** نسخة امتحان Security+ (701 أو 801). نقرر بعد Phase 1.
@@ -33,7 +35,7 @@
 | Lab | الموضوع | الحالة | Write-up |
 |---|---|---|---|
 | 00 | Modbus without authentication | ⬜ (جاهز، يشتغل على Debian RTU) | [labs/00-modbus-no-auth](../labs/00-modbus-no-auth/) |
-| 01 | Substation network: IT / firewall / OT | 🟨 الشبكات جاهزة | [labs/01-substation-network](../labs/01-substation-network/) |
+| 01 | Substation network: IT / firewall / OT | 🟨 الـ firewall جاهز، الـ RTU يتثبت | [labs/01-substation-network](../labs/01-substation-network/) |
 
 ## اللاب على اللابتوب (VMs)
 | المكون | الحالة |
@@ -41,9 +43,9 @@
 | Hypervisor: VMware Workstation Pro 17 | ✅ |
 | VMnet2 (IT) + VMnet3 (OT) | ✅ |
 | Kali VM (موجود من قبل) | ✅ |
-| Debian RTU VM | ⬜ |
-| Windows 10 x64 كجهاز IT | ⬜ |
-| Firewall VM: OPNsense 26.7 | ⬜ |
+| Debian RTU VM (`OTLAB-RTU-Debian`, 10.20.20.10) | 🟨 يتثبت |
+| Windows 10 x64 كجهاز IT | ⬜ (حالياً الـ host نفسه = IT) |
+| Firewall VM: OPNsense 26.7 (`OTLAB-FW-OPNsense`) | ✅ مثبت، IT/OT zones |
 | Windows Server (AD): WS2019_DC1/DC2 موجودة | 🟨 |
 | Wazuh / Security Onion | ⬜ |
 | IED simulators | ⬜ |
